@@ -1,0 +1,188 @@
+{% extends "admin/index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid py-3">
+    
+    <!-- Fila 1: Métricas Principales (Más compactas y elegantes) -->
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-3">
+            <div class="card border-left-success shadow-sm h-100 py-2" style="border-left: 4px solid #10b981 !important;">
+                <div class="card-body py-2">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Productos</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">124</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-boxes fa-2x text-gray-300" style="color: #10b981;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-3">
+            <div class="card border-left-success shadow-sm h-100 py-2" style="border-left: 4px solid #059669 !important;">
+                <div class="card-body py-2">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Almacenes Activos</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-warehouse fa-2x text-gray-300" style="color: #059669;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-3">
+            <div class="card border-left-success shadow-sm h-100 py-2" style="border-left: 4px solid #34d399 !important;">
+                <div class="card-body py-2">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Proveedores</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-truck fa-2x text-gray-300" style="color: #34d399;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-3">
+            <div class="card border-left-success shadow-sm h-100 py-2" style="border-left: 4px solid #047857 !important;">
+                <div class="card-body py-2">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Eficiencia WMS</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">96.4%</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-line fa-2x text-gray-300" style="color: #047857;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila 2: Gráfico Analítico y Calendario Compacto (Diseño en Grid de Dos Columnas) -->
+    <div class="row">
+        <!-- Columna Izquierda: Gráfica -->
+        <div class="col-lg-7 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between" style="background-color: #065f46; color: white;">
+                    <h6 class="m-0 font-weight-bold" style="font-size: 0.9rem;"><i class="fas fa-chart-bar mr-2"></i> Stock por Almacén</h6>
+                </div>
+                <div class="card-body">
+                    <div style="height: 260px; width: 100%;">
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Calendario Optimizado -->
+        <div class="col-lg-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between" style="background-color: #065f46; color: white;">
+                    <h6 class="m-0 font-weight-bold" style="font-size: 0.9rem;"><i class="fas fa-calendar-alt mr-2"></i> Próximos Despachos y Operaciones</h6>
+                </div>
+                <div class="card-body p-2">
+                    <div id="calendar" style="font-size: 0.85rem; min-height: 260px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila 3: Accesos Rápidos Profesionales y Alertas de Stock Bajo -->
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header py-2 bg-light">
+                    <h6 class="m-0 font-weight-bold text-dark" style="font-size: 0.9rem;"><i class="fas fa-bolt mr-2 text-warning"></i> Accesos Rápidos Operativos</h6>
+                </div>
+                <div class="card-body py-3">
+                    <a href="/admin/inventario/producto/add/" class="btn btn-success btn-sm mb-2 mr-2"><i class="fas fa-plus-circle mr-1"></i> Nuevo Producto</a>
+                    <a href="/admin/inventario/almacen/add/" class="btn btn-outline-success btn-sm mb-2 mr-2"><i class="fas fa-warehouse mr-1"></i> Registrar Almacén</a>
+                    <a href="/admin/inventario/proveedor/add/" class="btn btn-outline-success btn-sm mb-2 mr-2"><i class="fas fa-truck mr-1"></i> Nuevo Proveedor</a>
+                    <a href="/admin/inventario/zona/add/" class="btn btn-outline-success btn-sm mb-2"><i class="fas fa-th-large mr-1"></i> Crear Zona</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header py-2 bg-light">
+                    <h6 class="m-0 font-weight-bold text-dark" style="font-size: 0.9rem;"><i class="fas fa-exclamation-triangle mr-2 text-danger"></i> Alertas de Stock Crítico</h6>
+                </div>
+                <div class="card-body py-2">
+                    <ul class="list-group list-group-flush" style="font-size: 0.85rem;">
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                            <span>Producto: <b>Caja Térmica Tipo A</b> (Bodega Norte)</span>
+                            <span class="badge badge-danger badge-pill">3 unidades</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                            <span>Producto: <b>Pallet Plástico Reforzado</b></span>
+                            <span class="badge badge-warning badge-pill">5 unidades</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts de Chart.js y FullCalendar -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Gráfica optimizada
+        var ctx = document.getElementById('myBarChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Principal', 'Bodega Norte', 'CDIS'],
+                datasets: [{
+                    label: 'Stock',
+                    data: [65, 40, 85],
+                    backgroundColor: ['rgba(16, 185, 129, 0.8)', 'rgba(5, 150, 105, 0.8)', 'rgba(4, 120, 87, 0.8)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true } },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // Calendario compacto adaptado
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'es',
+            height: 250,
+            headerToolbar: {
+                left: 'prev,next',
+                center: 'title',
+                right: 'dayGridMonth,listWeek'
+            },
+            events: [
+                { title: 'Recepción Proveedor A', start: '2026-09-15', color: '#059669' },
+                { title: 'Despacho Norte', start: '2026-09-18', color: '#10b981' }
+            ]
+        });
+        calendar.render();
+    });
+</script>
+{% endblock %}
