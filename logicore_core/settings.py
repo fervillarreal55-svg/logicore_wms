@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-)*^mwfsj5l7)n*bk&)0eg%16^vc%3lj9$0#cu$3pe=i-2_!k(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Actualizado para permitir el dominio de Render y acceso local
+ALLOWED_HOSTS = ['logicore-wms.onrender.com', '.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
