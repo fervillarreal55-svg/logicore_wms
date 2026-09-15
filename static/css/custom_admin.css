@@ -1,12 +1,15 @@
 .sidebar-dark-primary, 
-.main-sidebar, 
-.main-sidebar::before {
+.main-sidebar {
     background-color: #056a2f !important;
+}
+
+.main-sidebar::before {
+    background-color: transparent !important;
 }
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, 
 .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-    background-color:  hsl(145, 63%, 49%) !important;
+    background-color: hsl(145, 63%, 49%) !important;
     color: #ffffff !important;
 }
 
