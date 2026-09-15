@@ -76,3 +76,9 @@ body.layout-fixed .main-sidebar,
 .sidebar {
     background-color: transparent !important;
 }
+/* Forzar color de fondo absoluto en la barra lateral de AdminLTE / Jazzmin */
+html body div.wrapper aside.main-sidebar.sidebar-dark-primary,
+html body div.wrapper aside.main-sidebar,
+.main-sidebar {
+    background-color: #056a2f !important;
+}
