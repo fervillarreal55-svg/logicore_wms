@@ -1,6 +1,6 @@
 /* Fondo translúcido aplicado directamente a todo el panel y tarjetas de contenido */
 body, .wrapper, .content-wrapper {
-    background: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)), url('/static/images/logo1.jpg') !important;
+    background: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)), url('/static/images/logo.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
