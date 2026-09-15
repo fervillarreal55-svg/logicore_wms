@@ -63,4 +63,16 @@
     background-color: #148f77 !important;
     border-color: #148f77 !important;
     transform: translateY(-1px);
+}/* Forzar color verde en la barra lateral anulando los temas oscuros de AdminLTE */
+body.sidebar-mini .main-sidebar, 
+body.layout-fixed .main-sidebar,
+.main-sidebar.sidebar-dark-primary, 
+.sidebar-dark-primary,
+.main-sidebar {
+    background-color: #056a2f !important;
+}
+
+/* Asegurar que el fondo de la barra interna tampoco sobrescriba el color */
+.sidebar {
+    background-color: transparent !important;
 }
