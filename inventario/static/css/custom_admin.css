@@ -1,25 +1,14 @@
-/* Fondo translúcido para el panel de control principal */
-body.app-inventario, body.change-list, body.dashboard, .main-sidebar ~ .content-wrapper {
-    position: relative;
+/* Fondo translúcido directo para el panel de administración */
+.main-sidebar ~ .content-wrapper, .content-wrapper {
+    position: relative !important;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/logo1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
 }
 
-.main-sidebar ~ .content-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/logo1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Asegurar que el contenido interno quede por encima de la imagen de fondo */
+/* Asegurar que los elementos internos mantengan su orden visual */
 .content-header, .content {
-    position: relative;
-    z-index: 1;
+    position: relative !important;
+    z-index: 1 !important;
 }
