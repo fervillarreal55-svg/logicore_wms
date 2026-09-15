@@ -1,7 +1,6 @@
 body.login {
-    background-image: url('../images/logo.jpg');
+    background-image: url('/static/images/logo.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 0.95;
 }
