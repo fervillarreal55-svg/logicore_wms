@@ -1,14 +1,13 @@
-/* Fondo translúcido directo para el panel de administración */
-.main-sidebar ~ .content-wrapper, .content-wrapper {
-    position: relative !important;
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/logo1.jpg') !important;
+/* Fondo translúcido aplicado directamente a todo el panel y tarjetas de contenido */
+body, .wrapper, .content-wrapper {
+    background: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)), url('/static/images/logo1.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
 }
 
-/* Asegurar que los elementos internos mantengan su orden visual */
-.content-header, .content {
-    position: relative !important;
-    z-index: 1 !important;
+/* Hacer las tarjetas del dashboard ligeramente translúcidas para que se vea el fondo */
+.card, .info-box, .small-box {
+    background-color: rgba(255, 255, 255, 0.90) !important;
+    backdrop-filter: blur(5px);
 }
