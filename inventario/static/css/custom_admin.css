@@ -1,6 +1,25 @@
-body.login, .login-page {
-    background-image: url('/static/images/logo.jpg') !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
+/* Fondo translúcido para el panel de control principal */
+body.app-inventario, body.change-list, body.dashboard, .main-sidebar ~ .content-wrapper {
+    position: relative;
+}
+
+.main-sidebar ~ .content-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/static/images/logo1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Asegurar que el contenido interno quede por encima de la imagen de fondo */
+.content-header, .content {
+    position: relative;
+    z-index: 1;
 }
