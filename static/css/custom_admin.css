@@ -1,6 +1,6 @@
 .sidebar-dark-primary, 
 .main-sidebar {
-    background-color: #056a2f !important;
+    background-color: #03662c !important;
 }
 
 .main-sidebar::before {
@@ -10,7 +10,7 @@
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, 
 .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
     background-color: hsl(145, 63%, 49%) !important;
-    color: #ffffff !important;
+    color: #68f086 !important;
 }
 
 .sidebar-menu .nav-item .fa-plus,
