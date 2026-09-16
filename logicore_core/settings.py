@@ -117,7 +117,7 @@ MAILERS = {
 JAZZMIN_SETTINGS = {
     "site_title": "LogiCore UPEC WMS",
     "site_header": "LogiCore UPEC",
-    "site_brand": "LogiCore UPEC",
+    "site_brand": "LogiCore_UPEC",
     "welcome_sign": "Bienvenido al Sistema de Gestión de Almacenes - UPEC",
     "copyright": "LogiCore UPEC - Ecuador",
     "icons": {
@@ -135,6 +135,16 @@ JAZZMIN_SETTINGS = {
     "theme": "flatly",
     "dark_mode_theme": "darkly",
     "custom_css": "css/custom_admin.css",
+    
+    # Ocultar modelos no deseados de la barra lateral si tienes más de la cuenta
+    "hide_models": [], 
+    
+    # Orden estricto para mostrar únicamente los módulos esenciales
+    "order_with_apps": [
+        "auth",
+        "inventario",
+    ],
+
     "custom_links": {
         "inventario": [{
             "name": "Añadir Producto",
