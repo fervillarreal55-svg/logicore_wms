@@ -136,8 +136,19 @@ JAZZMIN_SETTINGS = {
     "dark_mode_theme": "darkly",
     "custom_css": "css/custom_admin.css",
     
-    # Ocultar modelos no deseados de la barra lateral si tienes más de la cuenta
-    "hide_models": [], 
+    # Ocultamos todos los demás para dejar exactamente los 5 necesarios visibles
+    "hide_models": [
+        "auth.Group",
+        "inventario.categoria",
+        "inventario.cliente",
+        "inventario.linetransporte",
+        "inventario.linearepeticion",
+        "inventario.movimiento",
+        "inventario.ordenrecepcion",
+        "inventario.zona",
+        "inventario.ubicacion",
+        "inventario.unidad"
+    ], 
     
     # Orden estricto para mostrar únicamente los módulos esenciales
     "order_with_apps": [
