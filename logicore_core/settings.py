@@ -16,7 +16,7 @@ ALLOWED_HOSTS = ['logicore-wms.onrender.com', '.onrender.com', '127.0.0.1', 'loc
 
 INSTALLED_APPS = [
     'jazzmin',
-    'inventario',
+    'inventario.apps.InventarioConfig',  # ACTUALIZADO AQUÍ
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
